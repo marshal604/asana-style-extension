@@ -2,7 +2,7 @@
   "name": "Asana style extension",
   "version": "1.0.1",
   "description": "Adjust some style of Asana",
-  "permissions": ["activeTab"],
+  "permissions": [],
   "browser_action": {
     "default_popup": "popup.html",
     "default_icon": "images/icon_48.png"
