@@ -1,7 +1,7 @@
 {
-  "name": "Asana style extension",
-  "version": "1.0.1",
-  "description": "Adjust some style of Asana",
+  "name": "Asana Helper",
+  "version": "2.0.0",
+  "description": "Asana Helper will improve user experience",
   "permissions": [],
   "browser_action": {
     "default_popup": "popup.html",
