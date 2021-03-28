@@ -4,14 +4,18 @@
 <head>
     <meta charset="UTF-8">
     <style>
-        .ase-switch-box {
-            width: 200px;
+        .ase-box {
+            width: 220px;
             display: flex;
             align-items: center;
             justify-content: space-between;
         }
 
-        .ase-switch-label {
+        .ase-box+.ase-box {
+            margin-top: 8px
+        }
+
+        .ase-label {
             margin-right: 4px;
             font-size: 14px;
         }
@@ -75,19 +79,27 @@
         .ase-slider.ase-round:before {
             border-radius: 50%;
         }
+
+        /* fr input */
+        #ase-fr-input {
+            width: 70px
+        }
     </style>
 </head>
 
 <body>
-    <div class="ase-switch-box">
-        <div class="ase-switch-label">調整完成項目字體顏色</div>
+    <div class="ase-box">
+        <div class="ase-label">恢復完成項目字體顏色</div>
         <label class="ase-switch">
-            <input checked id="ase-task-complete-style-input" type="checkbox">
+            <input id="ase-task-complete-style-input" type="checkbox">
             <span class="ase-slider ase-round"></span>
         </label>
     </div>
-    </label>
-    <script src="popup.js"></script>
+    <div class="ase-box">
+        <div class="ase-label">輸入fr將轉換為From</div>
+        <input id="ase-fr-input" type="input">
+    </div>
+    <script src="index.js"></script>
 </body>
 
 </html>

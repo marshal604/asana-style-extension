@@ -2,23 +2,28 @@
   "name": "Asana Helper",
   "version": "2.0.0",
   "description": "Asana Helper will improve user experience",
-  "permissions": ["tabs"],
+  "permissions": ["tabs", "storage"],
   "browser_action": {
-    "default_popup": "popup.html",
-    "default_icon": "images/icon_48.png"
+    "default_popup": "src/browser-actions/index.html",
+    "default_icon": "assets/images/icon_48.png"
+  },
+  "background": {
+    "scripts": ["src/background/index.js"],
+    "persistent": false
   },
   "icons": {
-    "16": "images/icon_16.png",
-    "32": "images/icon_32.png",
-    "48": "images/icon_48.png",
-    "128": "images/icon_128.png"
+    "16": "assets/images/icon_16.png",
+    "32": "assets/images/icon_32.png",
+    "48": "assets/images/icon_48.png",
+    "128": "assets/images/icon_128.png"
   },
   "content_scripts": [
     {
       "matches": ["https://app.asana.com/*"],
-      "js": ["page.js"],
-      "css": ["page.css"]
+      "js": ["src/content-scripts/index.js"],
+      "css": ["src/content-scripts/index.css"]
     }
   ],
+  "web_accessible_resources": ["src/helpers/textarea-event-listener.js"],
   "manifest_version": 2
 }
