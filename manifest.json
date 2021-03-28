@@ -20,5 +20,6 @@
       "css": ["src/content-scripts/index.css"]
     }
   ],
+  "web_accessible_resources": ["src/helpers/model.js"],
   "manifest_version": 2
 }
