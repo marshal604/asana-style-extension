@@ -24,6 +24,6 @@
       "css": ["src/content-scripts/index.css"]
     }
   ],
-  "web_accessible_resources": ["src/helpers/textarea-event-listener.js"],
+  "web_accessible_resources": ["src/helpers/textarea-event-listener.js", "src/helpers/model.js"],
   "manifest_version": 2
 }
