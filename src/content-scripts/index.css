@@ -1,3 +1,26 @@
-body.task-completed-style .SubtaskTaskRow--completed .SubtaskTaskRow-taskName, body.task-completed-style .SpreadsheetGridTaskNameCell-taskName.SpreadsheetGridTaskNameCell-taskName--completed {
-    color: #000 !important;
+:root body.task-completed-style {
+    --color-text-disabled-deprecated: #000 !important;
+}
+
+:root body.dark-mode-style {
+    --color-text-disabled-deprecated: #cbd4db !important;
+    --color-background-weak: #151b26 !important;
+    --color-text: #cbd4db !important;
+    --color-text-deprecated: #6f7782 !important;
+    --color-selected-background: #252f41 !important;
+    --color-background-hover: #252f41 !important;
+    --color-background-active: #252f41 !important;
+    --color-background-medium: #252f41 !important;
+    --color-button-text-subtle-hover: #fff !important;
+    --color-button-text-secondary-hover: #fff !important;
+    --color-background-weak-hover-deprecated: #252f41 !important;
+    --color-text-weak-hover: #fff !important;
+    --color-customization-background-weak: #3c4d6c !important;
+    --color-border: #3c4d6c !important;
+    --color-border-hover: #3c4d6c !important;
+    --color-border-deprecated: #3c4d6c !important;
+    --color-border-active: #3c4d6c !important;
+    --color-background-weak-hover: #3c4d6c !important;
+    --color-banner-background: #252f41 !important;
+    --color-banner-text: #cbd4db !important;
 }

@@ -1,41 +1,43 @@
 chrome.tabs.query({ currentWindow: true, active: true }, init);
 
 let StorageId;
-async function importStorageId() {
+let Style;
+async function importConstants() {
   const src = await import(chrome.extension.getURL('src/helpers/model.js'));
   StorageId = src.StorageId;
+  Style = src.Style;
 }
 
 async function init([tab]) {
-  await importStorageId();
+  await importConstants();
   initStorage();
-  subscribeTaskStyleChange(tab);
+  subscribeStyleChange({ tab, key: StorageId.TaskCompletedStyle, className: Style.TaskCompleted });
+  subscribeStyleChange({ tab, key: StorageId.DarkModeStyle, className: Style.DarkMode });
 }
 
-function subscribeTaskStyleChange(tab) {
+function subscribeStyleChange({ tab, key, className }) {
   const tabId = tab.id;
-  const taskCompletedStyleInput = document.getElementById(StorageId.TaskCompletedStyle);
-  taskCompletedStyleInput.onchange = function (el) {
+  const styleInput = document.getElementById(key);
+  styleInput.onchange = function (el) {
     const checked = el.target.checked;
-    const key = StorageId.TaskCompletedStyle;
     chrome.storage.sync.set({ [key]: checked });
     chrome.tabs.sendMessage(tabId, {
       id: key,
       checked,
-      name: 'task-completed-style',
+      name: className,
     });
   };
 }
 
 function initStorage() {
-  initTaskCompletedStyleInput();
+  initStyleInput(StorageId.TaskCompletedStyle);
+  initStyleInput(StorageId.DarkModeStyle);
 }
 
-function initTaskCompletedStyleInput() {
-  const taskCompletedStyleInput = document.getElementById(StorageId.TaskCompletedStyle);
-  const key = StorageId.TaskCompletedStyle;
+function initStyleInput(key) {
+  const styleInput = document.getElementById(key);
   chrome.storage.sync.get(key, (result) => {
     const checked = result[key];
-    taskCompletedStyleInput.checked = checked;
+    styleInput.checked = checked;
   });
 }

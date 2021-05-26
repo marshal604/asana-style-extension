@@ -1,6 +1,6 @@
 {
   "name": "Asana Helper",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "Asana Helper will improve user experience",
   "permissions": ["storage"],
   "browser_action": {
