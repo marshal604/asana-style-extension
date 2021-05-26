@@ -15,7 +15,8 @@ async function init() {
 function initCompletedSubtaskStyle() {
   const key = StorageId.TaskCompletedStyle;
   chrome.storage.sync.get(key, (result) => {
-    if (result[key]) return;
+    if (result[key] === false) return;
+    chrome.storage.sync.set({ [key]: true });
     document.body.classList.add('task-completed-style');
   });
 }
@@ -29,9 +30,6 @@ function subscribeMessage() {
 
 function TaskStyleChange(message) {
   const { checked, name } = message;
-  if (checked) {
-    document.body.classList.remove(name);
-  } else {
-    document.body.classList.add(name);
-  }
+  const action = checked ? 'add' : 'remove';
+  document.body.classList[action](name);
 }

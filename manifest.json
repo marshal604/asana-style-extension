@@ -2,7 +2,7 @@
   "name": "Asana Helper",
   "version": "2.0.0",
   "description": "Asana Helper will improve user experience",
-  "permissions": ["tabs", "storage"],
+  "permissions": ["storage"],
   "browser_action": {
     "default_popup": "src/browser-actions/index.html",
     "default_icon": "assets/images/icon_48.png"

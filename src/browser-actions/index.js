@@ -1,4 +1,4 @@
-chrome.tabs.query({ currentWindow: true }, init);
+chrome.tabs.query({ currentWindow: true, active: true }, init);
 
 let StorageId;
 async function importStorageId() {
@@ -14,7 +14,7 @@ async function init([tab]) {
 
 function subscribeTaskStyleChange(tab) {
   const tabId = tab.id;
-  const taskCompletedStyleInput = document.getElementById('ase-task-complete-style-input');
+  const taskCompletedStyleInput = document.getElementById(StorageId.TaskCompletedStyle);
   taskCompletedStyleInput.onchange = function (el) {
     const checked = el.target.checked;
     const key = StorageId.TaskCompletedStyle;
@@ -32,7 +32,7 @@ function initStorage() {
 }
 
 function initTaskCompletedStyleInput() {
-  const taskCompletedStyleInput = document.getElementById('ase-task-complete-style-input');
+  const taskCompletedStyleInput = document.getElementById(StorageId.TaskCompletedStyle);
   const key = StorageId.TaskCompletedStyle;
   chrome.storage.sync.get(key, (result) => {
     const checked = result[key];
