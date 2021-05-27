@@ -17,9 +17,12 @@ async function init() {
 
 function initSlideToggle(key, className, defaultValue = true) {
   chrome.storage.sync.get(key, (result) => {
-    if (result[key] === false) return;
-    chrome.storage.sync.set({ [key]: defaultValue });
-    const action = defaultValue ? 'add' : 'remove';
+    const value = result[key];
+    const isUndefined = value === undefined;
+    if (!isUndefined && !value) return;
+    const checked = isUndefined ? defaultValue : value;
+    chrome.storage.sync.set({ [key]: checked });
+    const action = checked ? 'add' : 'remove';
     document.body.classList[action](className);
   });
 }
