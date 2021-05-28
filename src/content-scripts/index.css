@@ -1,5 +1,6 @@
 :root body.task-completed-style {
     --color-text-disabled-deprecated: #000 !important;
+    --color-text-weak: #000 !important;
 }
 
 :root body.dark-mode-style {
@@ -14,6 +15,7 @@
     --color-button-text-subtle-hover: #fff !important;
     --color-button-text-secondary-hover: #fff !important;
     --color-background-weak-hover-deprecated: #252f41 !important;
+    --color-text-weak: #cbd4db !important;
     --color-text-weak-hover: #fff !important;
     --color-customization-background-weak: #3c4d6c !important;
     --color-border: #3c4d6c !important;
