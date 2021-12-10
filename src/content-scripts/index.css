@@ -1,10 +1,12 @@
 :root body.task-completed-style {
+    --color-text-disabled: #000 !important;
     --color-text-disabled-deprecated: #000 !important;
     --color-text-weak: #000 !important;
 }
 
 :root body.dark-mode-style {
     --color-text-disabled-deprecated: #cbd4db !important;
+    --color-text-disabled: #cbd4db !important;
     --color-background-weak: #151b26 !important;
     --color-text: #cbd4db !important;
     --color-text-deprecated: #6f7782 !important;
