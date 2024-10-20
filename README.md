@@ -3,6 +3,10 @@
 ## Overview
 Asana Helper is a Chrome extension designed to enhance the user experience of Asana. This extension allows users to customize the visual style of Asana, including darkening the font color of completed items and enabling a dark mode.
 
+## Version History
+- Latest Version: v3.0.0 (2024.10) - Upgraded to Manifest V3
+- Initial Release: v2.0.3 (2021.05)
+
 ## Usage Statistics
 ![Daily Active Users](/assets/images/DAU.png)
 *Current daily active users: 81 (2.65% increase from previous period)*
