@@ -3,7 +3,7 @@ chrome.tabs.query({ currentWindow: true, active: true }, init);
 let StorageId;
 let Style;
 async function importConstants() {
-  const src = await import(chrome.extension.getURL('src/helpers/model.js'));
+  const src = await import(chrome.runtime.getURL('src/helpers/model.js'));
   StorageId = src.StorageId;
   Style = src.Style;
 }

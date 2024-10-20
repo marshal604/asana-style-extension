@@ -1,7 +1,7 @@
 let StorageId;
 let Style;
 async function importConstants() {
-  const src = await import(chrome.extension.getURL('src/helpers/model.js'));
+  const src = await import(chrome.runtime.getURL('src/helpers/model.js'));
   StorageId = src.StorageId;
   Style = src.Style;
 }
@@ -28,11 +28,13 @@ function initSlideToggle(key, className, defaultValue = true) {
 }
 
 function subscribeMessage() {
-  chrome.runtime.onMessage.addListener(function (message) {
+  chrome.runtime.onMessage.addListener(function (message, sender, sendResponse) {
     const { id } = message;
     if ([StorageId.TaskCompletedStyle, StorageId.DarkModeStyle].includes(id)) {
-      return styleChange(message);
+      styleChange(message);
     }
+    sendResponse({});
+    return true;
   });
 }
 
